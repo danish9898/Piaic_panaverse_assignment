@@ -1,8 +1,21 @@
 // assignment no # 1
-let arr1 = [11, 15, 17, 18, 19];
-for (let i = 0; i < arr1.length; i++) {
-  console.log("array index : " + i + " and array value is : " + arr1[i]);
+Array.prototype.max = function () {
+  return Math.max.apply(null, this);
+};
+
+Array.prototype.min = function () {
+  return Math.min.apply(null, this);
+};
+let arr1 = [11, 15, 17, 18, 20];
+arr1.sort();
+let num = arr1.min();
+let maxnumber = arr1.max();
+for (num; num < maxnumber; num++) {
+  if (arr1.includes(num) == false) {
+    console.log("missing number is : " + num);
+  }
 }
+
 let array = ["testa", "testb"];
 Array.prototype.upperCase = function () {
   var i;
@@ -44,5 +57,4 @@ function prompt() {
     readline.close();
   });
 }
-prompt()
-
+prompt();
